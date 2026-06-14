@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Numbino</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="app" aria-live="polite">
+      <section class="topbar">
+        <div>
+          <p class="eyebrow">Numbino</p>
+          <h1>Считаем и играем</h1>
+        </div>
+        <div class="score" aria-label="Очки">
+          <span id="stars">0</span>
+          <span class="star" aria-hidden="true">★</span>
+        </div>
+      </section>
+
+      <section class="settings" aria-label="Настройки игры">
+        <div class="field">
+          <label for="age">Возраст</label>
+          <select id="age">
+            <option value="3">3 года</option>
+            <option value="4" selected>4 года</option>
+            <option value="5">5 лет</option>
+            <option value="6">6 лет</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="mode">Задания</label>
+          <select id="mode">
+            <option value="count">Счет предметов</option>
+            <option value="compare">Больше или меньше</option>
+            <option value="add">Сложение</option>
+            <option value="mixed" selected>Смешанный режим</option>
+          </select>
+        </div>
+        <button id="newTask" class="secondary" type="button">Новое задание</button>
+      </section>
+
+      <section class="board">
+        <div class="prompt">
+          <p id="taskType" class="task-type">Счет</p>
+          <h2 id="question">Сколько предметов на экране?</h2>
+        </div>
+
+        <div id="visual" class="visual" aria-label="Задание"></div>
+
+        <div id="answers" class="answers" aria-label="Варианты ответа"></div>
+
+        <div id="feedback" class="feedback" role="status"></div>
+      </section>
+
+      <section class="progress" aria-label="Прогресс">
+        <div class="progress-header">
+          <span>Мини-цель</span>
+          <strong><span id="done">0</span>/5</strong>
+        </div>
+        <div class="progress-track">
+          <div id="progressFill" class="progress-fill"></div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
